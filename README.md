@@ -16,7 +16,7 @@ This guide is the a fork of [Temporal Hello World MTLS](https://github.com/tempo
 
 4. Copy the `.env-example` file and rename it to `.env`.
 
-5. Fill in the .env with the following:
+5. If you want to connect to Temporal Cloud then fill in the .env with the following:
 
 | key                       | value               |
 |---------------------------|---------------------|
@@ -24,6 +24,7 @@ This guide is the a fork of [Temporal Hello World MTLS](https://github.com/tempo
 | TEMPORAL_NAMESPACE        | foo.bar             |
 | TEMPORAL_CLIENT_CERT_PATH | ./tls/ca.pem        |
 | TEMPORAL_CLIENT_KEY_PATH  | ./tls/ca.key        |
+| MTLS                      | true                |
 
 Reference: [Connecting to Temporal Cloud (with mTLS)](https://docs.temporal.io/typescript/security?lang=ts#connecting-to-temporal-cloud-with-mtls)
 
@@ -33,16 +34,30 @@ Reference: [Connecting to Temporal Cloud (with mTLS)](https://docs.temporal.io/t
 npm install
 ```
 
-7. Execute the following command:
+7. To run the Client, execute the following command:
 
 ```sh
-npm start
+npm run client.watch
 ```
 
-8. In another shell, execute the following command:
+8. In run the Worker, execute the following command:
 
 ```sh
-npm run workflow
+npm run worker.watch
 ```
 
-9. It should print out `Hello, Temporal!`.
+9. Execute the following `curl` request.
+
+```sh
+curl -X POST http://localhost:8080/example \
+   -H 'Content-Type: application/json' \
+   -d '{"message":"Hello World"}'
+```
+
+## Running Encryption
+
+1. To run the Codec Server, execute the following command:
+
+```sh
+npm run codec-server
+```

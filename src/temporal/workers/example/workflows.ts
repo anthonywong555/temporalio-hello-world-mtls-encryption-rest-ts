@@ -9,9 +9,9 @@ const { echo } = proxyActivities<typeof activities>({
 /** A workflow that simply calls an activity */
 export async function example(request: Example_Request): Promise<Example_Response> {
   try {
-    const {message} = request;
+    const { message } = request;
     const result = await echo(message);
-    return {message: result};
+    return { message: result };
   } catch (e) {
     throw e;
   }
