@@ -59,5 +59,5 @@ curl -X POST http://localhost:8080/example \
 1. To run the Codec Server, execute the following command:
 
 ```sh
-npm run codec-server
+npm run encryption
 ```
