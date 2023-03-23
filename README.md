@@ -1,4 +1,4 @@
-# temporalio-hello-world-mtls-encryption-rest-ts
+# Temporal.io Hello World MTLS Encryption REST Boilerplate
 
 This guide is the a fork of [Temporal Hello World MTLS](https://github.com/temporalio/samples-typescript/tree/main/hello-world-mtls).
 
@@ -8,12 +8,14 @@ This guide is the a fork of [Temporal Hello World MTLS](https://github.com/tempo
 
 ## Getting Started with CLI
 
-Execute the following commands:
+1. Execute the following commands:
 
 ```sh
 brew install temporal
 temporal server start-dev
 ```
+
+2. Copy the .env-example file and rename it to .env.
 
 ## Getting Started with Cloud
 
