@@ -6,7 +6,7 @@
     "build": "tsc --build",
     "build.watch": "tsc --build --watch",
     "lint": "eslint .",
-    "codec-server": "ts-node src/temporal/encryption/codec-server.ts",
+    "encryption": "ts-node src/temporal/encryption/codec-server.ts",
     "worker": "ts-node src/temporal/workers/example/index.ts",
     "worker.watch": "nodemon src/temporal/workers/example/index.ts",
     "client": "ts-node src/server/index.ts",

@@ -7,6 +7,7 @@ services:
     volumes:
       # You will need this for the nodemon
       - ./:/usr/src/app/web
+      - /usr/src/app/web/node_modules
     env_file: .env
     ports:
       - "$PORT:$PORT"
@@ -17,4 +18,14 @@ services:
     volumes:
       # You will need this for the nodemon
       - ./:/usr/src/app/worker
+      - /usr/src/app/worker/node_modules
+    env_file: .env
+  encryption:
+    build:
+      context: .
+      dockerfile: Dockerfile.encryption.dev
+    volumes:
+      # You will need this for the nodemon
+      - ./:/usr/src/app/encryption
+      - /usr/src/app/encryption/node_modules
     env_file: .env
