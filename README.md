@@ -1,12 +1,21 @@
-# temporalio-hello-world-mtls-rest-ts
+# temporalio-hello-world-mtls-encryption-rest-ts
 
 This guide is the a fork of [Temporal Hello World MTLS](https://github.com/temporalio/samples-typescript/tree/main/hello-world-mtls).
 
 ## Prerequisite
 
-- [Temporal Cloud](https://pages.temporal.io/cloud-early-access)
+- [Temporal CLI](https://github.com/temporalio/cli) or [Temporal Cloud](https://pages.temporal.io/cloud-early-access)
 
-## Getting Started
+## Getting Started with CLI
+
+Execute the following commands:
+
+```sh
+brew install temporal
+temporal server start-dev
+```
+
+## Getting Started with Cloud
 
 1. Use the 🐳 [Temporal.io Client Certificate Generation](https://hub.docker.com/r/temporalio/client-certificate-generation) to generate both CA and End-Entity certificate.
 
@@ -28,25 +37,27 @@ This guide is the a fork of [Temporal Hello World MTLS](https://github.com/tempo
 
 Reference: [Connecting to Temporal Cloud (with mTLS)](https://docs.temporal.io/typescript/security?lang=ts#connecting-to-temporal-cloud-with-mtls)
 
-6. Execute the following command:
+## Running the Project
+
+1. Execute the following command:
 
 ```sh
 npm install
 ```
 
-7. To run the Client, execute the following command:
+2. To run the Client, execute the following command:
 
 ```sh
 npm run client.watch
 ```
 
-8. In run the Worker, execute the following command:
+3. In run the Worker, execute the following command:
 
 ```sh
 npm run worker.watch
 ```
 
-9. Execute the following `curl` request.
+4. Execute the following `curl` request.
 
 ```sh
 curl -X POST http://localhost:8080/example \
